@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>年齢計算ツール｜生年月日から満年齢・干支・星座を計算【無料】- CalcVerse</title>
+<meta name="description" content="生年月日を入力するだけで満年齢・干支・星座・次の誕生日までの日数を自動計算。完全無料・登録不要。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/age/">
+<meta property="og:title" content="年齢計算ツール - 満年齢・干支・星座を計算">
+<meta property="og:description" content="生年月日から満年齢・干支・星座を瞬時に計算。完全無料。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/age/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "満年齢と数え年の違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "満年齢は生まれた日を0歳として、誕生日ごとに1歳加算します。数え年は生まれた年を1歳として、元日（1月1日）ごとに1歳加算します。現在の日本では公的には満年齢が使われています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "干支（えと）はどう決まりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "干支は生まれた年の西暦から決まります。12年周期で子(ね)・丑(うし)・寅(とら)・卯(う)・辰(たつ)・巳(み)・午(うま)・未(ひつじ)・申(さる)・酉(とり)・戌(いぬ)・亥(い)の順に巡ります。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "日付", "item": "https://calcverse.net/?cat=date" },
+    { "@type": "ListItem", "position": 3, "name": "年齢計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=date">日付</a> &gt; 年齢計算</div>
+
+  <h1>🎂 年齢計算ツール</h1>
+  <p class="calc-desc">生年月日を入力するだけで、満年齢・干支・星座・次の誕生日までの日数を自動計算します。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="birthdate">生年月日</label>
+        <input type="date" id="birthdate">
+      </div>
+      <button class="calc-btn" onclick="calculate()">年齢を計算する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">生年月日を入力して「年齢を計算する」を押してください。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>年齢計算の基礎知識</h2>
+
+    <h3>満年齢の数え方</h3>
+    <p>日本では「年齢計算ニ関スル法律」（明治35年）により、満年齢を使用することが定められています。満年齢は生まれた日を0歳とし、誕生日の前日の午後12時（=誕生日の当日午前0時）に加齢されます。つまり、法律上は誕生日の前日に1歳年を取ることになります。</p>
+
+    <h3>数え年について</h3>
+    <p>数え年は伝統的な年齢の数え方で、生まれた年を1歳とし、元日（1月1日）に1歳加算します。現在でも厄年や七五三など一部の伝統行事では数え年が使われることがあります。</p>
+
+    <h3>干支（十二支）について</h3>
+    <table>
+      <thead><tr><th>干支</th><th>読み</th><th>最近の年</th></tr></thead>
+      <tbody>
+        <tr><td>子</td><td>ね（ネズミ）</td><td>2020, 2032</td></tr>
+        <tr><td>丑</td><td>うし（ウシ）</td><td>2021, 2033</td></tr>
+        <tr><td>寅</td><td>とら（トラ）</td><td>2022, 2034</td></tr>
+        <tr><td>卯</td><td>う（ウサギ）</td><td>2023, 2035</td></tr>
+        <tr><td>辰</td><td>たつ（タツ）</td><td>2024, 2036</td></tr>
+        <tr><td>巳</td><td>み（ヘビ）</td><td>2025, 2037</td></tr>
+        <tr><td>午</td><td>うま（ウマ）</td><td>2026, 2038</td></tr>
+        <tr><td>未</td><td>ひつじ（ヒツジ）</td><td>2027, 2039</td></tr>
+        <tr><td>申</td><td>さる（サル）</td><td>2028, 2040</td></tr>
+        <tr><td>酉</td><td>とり（トリ）</td><td>2029, 2041</td></tr>
+        <tr><td>戌</td><td>いぬ（イヌ）</td><td>2030, 2042</td></tr>
+        <tr><td>亥</td><td>い（イノシシ）</td><td>2031, 2043</td></tr>
+      </tbody>
+    </table>
+
+    <h3>星座の期間</h3>
+    <p>西洋占星術の12星座は、生まれた月日によって決まります。おひつじ座（3/21〜4/19）、おうし座（4/20〜5/20）、ふたご座（5/21〜6/21）、かに座（6/22〜7/22）、しし座（7/23〜8/22）、おとめ座（8/23〜9/22）、てんびん座（9/23〜10/23）、さそり座（10/24〜11/22）、いて座（11/23〜12/21）、やぎ座（12/22〜1/19）、みずがめ座（1/20〜2/18）、うお座（2/19〜3/20）です。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/days/" class="tool-card">
+        <div class="icon" style="background:rgba(6,182,212,0.15)">📅</div>
+        <h3>日数計算</h3>
+        <p>2つの日付間の日数・営業日数を算出</p>
+      </a>
+      <a href="/bmi/" class="tool-card">
+        <div class="icon" style="background:rgba(34,197,94,0.15)">⚖️</div>
+        <h3>BMI計算</h3>
+        <p>身長と体重から肥満度を判定</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const bd = document.getElementById('birthdate').value;
+  if (!bd) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">生年月日を入力してください。</p>';
+    return;
+  }
+  const birth = new Date(bd);
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  // 満年齢
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+
+  // 数え年
+  const kazoe = age + 1 + (today.getMonth() === 0 && today.getDate() === 1 ? 0 : 0);
+  const kazoeAge = today.getFullYear() - birth.getFullYear() + 1;
+
+  // 干支
+  const eto = ['子(ね)','丑(うし)','寅(とら)','卯(う)','辰(たつ)','巳(み)','午(うま)','未(ひつじ)','申(さる)','酉(とり)','戌(いぬ)','亥(い)'];
+  const etoIndex = (birth.getFullYear() - 4) % 12;
+  const etoName = eto[etoIndex >= 0 ? etoIndex : etoIndex + 12];
+
+  // 星座
+  const month = birth.getMonth() + 1;
+  const day = birth.getDate();
+  const signs = [
+    [1,20,'みずがめ座 ♒'],[2,19,'うお座 ♓'],[3,21,'おひつじ座 ♈'],[4,20,'おうし座 ♉'],
+    [5,21,'ふたご座 ♊'],[6,22,'かに座 ♋'],[7,23,'しし座 ♌'],[8,23,'おとめ座 ♍'],
+    [9,23,'てんびん座 ♎'],[10,24,'さそり座 ♏'],[11,23,'いて座 ♐'],[12,22,'やぎ座 ♑']
+  ];
+  let sign = 'やぎ座 ♑';
+  for (let i = signs.length - 1; i >= 0; i--) {
+    if (month > signs[i][0] || (month === signs[i][0] && day >= signs[i][1])) { sign = signs[i][2]; break; }
+  }
+
+  // 次の誕生日
+  let nextBd = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
+  if (nextBd <= today) nextBd = new Date(today.getFullYear() + 1, birth.getMonth(), birth.getDate());
+  const daysUntil = Math.ceil((nextBd - today) / (1000*60*60*24));
+
+  // 生きた日数
+  const totalDays = Math.floor((today - birth) / (1000*60*60*24));
+
+  document.getElementById('resultBox').innerHTML = `
+    <h3>計算結果</h3>
+    <div class="result-value" style="color:var(--accent)">${age}<span style="font-size:16px;color:var(--text-secondary)"> 歳</span></div>
+    <div class="result-detail" style="margin-top:16px">数え年: <strong>${kazoeAge} 歳</strong></div>
+    <div class="result-detail">干支: <strong>${etoName}</strong></div>
+    <div class="result-detail">星座: <strong>${sign}</strong></div>
+    <div class="result-detail" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">生まれてから: <strong>${totalDays.toLocaleString()} 日</strong></div>
+    <div class="result-detail">次の誕生日まで: <strong style="color:var(--accent-green)">${daysUntil} 日</strong></div>
+  `;
+}
+</script>
+</body>
+</html>

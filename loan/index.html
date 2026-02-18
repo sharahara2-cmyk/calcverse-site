@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住宅ローン計算ツール｜毎月の返済額・総支払額シミュレーション【無料】- CalcVerse</title>
+<meta name="description" content="住宅ローンの毎月返済額と総支払額を簡単シミュレーション。借入額・金利・返済期間を入力するだけ。元利均等返済に対応。完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/loan/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "住宅ローンの毎月返済額はどう計算しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "元利均等返済の場合、毎月返済額 = 借入額 × 月利 × (1+月利)^返済回数 ÷ ((1+月利)^返済回数 - 1) で算出します。月利は年利÷12で計算します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "元利均等返済と元金均等返済の違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "元利均等返済は毎月の返済額（元金+利息）が一定です。元金均等返済は毎月の元金返済額が一定で、利息が減るため返済額は徐々に減少します。総支払額は元金均等返済の方が少なくなります。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "お金", "item": "https://calcverse.net/?cat=finance" },
+    { "@type": "ListItem", "position": 3, "name": "住宅ローン計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=finance">お金</a> &gt; 住宅ローン計算</div>
+
+  <h1>🏠 住宅ローン計算ツール</h1>
+  <p class="calc-desc">借入額・年利・返済期間を入力するだけで、毎月の返済額と総支払額（利息合計）をシミュレーションできます。元利均等返済方式に対応。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="principal">借入額（万円）</label>
+        <input type="number" id="principal" placeholder="3500" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="rate">年利（%）</label>
+        <input type="number" id="rate" placeholder="0.5" step="0.01" inputmode="decimal">
+      </div>
+      <div class="input-group">
+        <label for="years">返済期間（年）</label>
+        <input type="number" id="years" placeholder="35" inputmode="numeric">
+      </div>
+      <button class="calc-btn" onclick="calculate()">返済額を計算する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">各項目を入力して「返済額を計算する」を押してください。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>住宅ローン計算の基礎知識</h2>
+
+    <h3>元利均等返済の計算式</h3>
+    <div class="formula">毎月返済額 = P × r × (1+r)^n ÷ ((1+r)^n − 1)</div>
+    <p>P = 借入額、r = 月利（年利÷12）、n = 返済回数（年数×12）です。この方式では毎月の返済額が一定になるため、返済計画を立てやすいというメリットがあります。</p>
+
+    <h3>金利タイプの違い</h3>
+    <p>住宅ローンの金利には主に「変動金利」「固定金利」「固定金利期間選択型」の3種類があります。変動金利は半年ごとに金利が見直されますが、一般的に固定金利より低く設定されています。固定金利は返済期間中の金利が変わらないため、将来の返済額が確定するメリットがあります。</p>
+
+    <h3>返済負担率の目安</h3>
+    <p>一般的に、年収に対する年間返済額の割合（返済負担率）は25%以内が推奨されています。例えば年収600万円の場合、年間返済額は150万円以内、毎月約12.5万円以内が目安となります。ただし、これは住宅ローン以外の借入も含めた合計です。</p>
+
+    <h3>繰り上げ返済について</h3>
+    <p>繰り上げ返済には「期間短縮型」と「返済額軽減型」があります。利息軽減効果が大きいのは期間短縮型で、特にローン開始直後の繰り上げ返済が最も効果的です。ただし、手元資金とのバランスを考慮する必要があります。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/compound/" class="tool-card">
+        <div class="icon" style="background:rgba(34,197,94,0.15)">📈</div>
+        <h3>複利計算（積立投資）</h3>
+        <p>毎月の積立額と利回りから将来の資産額を計算</p>
+      </a>
+      <a href="/tax/" class="tool-card">
+        <div class="icon" style="background:rgba(245,158,11,0.15)">🧾</div>
+        <h3>消費税計算</h3>
+        <p>税込み⇔税抜き価格を瞬時に算出</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const P = parseFloat(document.getElementById('principal').value) * 10000;
+  const annualRate = parseFloat(document.getElementById('rate').value);
+  const years = parseFloat(document.getElementById('years').value);
+  if (!P || !years || P <= 0 || years <= 0 || isNaN(annualRate)) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">有効な数値を入力してください。</p>';
+    return;
+  }
+  const r = annualRate / 100 / 12;
+  const n = years * 12;
+  let monthly;
+  if (r === 0) monthly = P / n;
+  else monthly = P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+  const total = monthly * n;
+  const interest = total - P;
+  const fmt = x => Math.round(x).toLocaleString();
+  const manFmt = x => (x / 10000).toFixed(1);
+  document.getElementById('resultBox').innerHTML = `
+    <h3>計算結果</h3>
+    <div class="result-value" style="color:var(--accent)">¥${fmt(monthly)}<span style="font-size:14px;color:var(--text-secondary)"> / 月</span></div>
+    <div class="result-detail" style="margin-top:20px">借入額: <strong>¥${fmt(P)}</strong>（${manFmt(P)}万円）</div>
+    <div class="result-detail">総支払額: <strong>¥${fmt(total)}</strong>（${manFmt(total)}万円）</div>
+    <div class="result-detail">うち利息合計: <strong style="color:var(--accent-rose)">¥${fmt(interest)}</strong>（${manFmt(interest)}万円）</div>
+    <div class="result-bar"><div class="result-bar-fill" style="width:${(P/total*100).toFixed(1)}%;background:var(--accent)"></div></div>
+    <div class="result-detail" style="font-size:12px;color:var(--text-muted)">■ 元金 ${(P/total*100).toFixed(1)}%　■ 利息 ${(interest/total*100).toFixed(1)}%</div>
+    <div class="result-detail" style="margin-top:16px">年間返済額: <strong>¥${fmt(monthly*12)}</strong></div>
+  `;
+}
+document.querySelectorAll('input').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パーセント計算ツール｜割合・百分率を3パターンで計算【無料】- CalcVerse</title>
+<meta name="description" content="パーセント（百分率）の計算を3パターンで対応。「AはBの何%？」「Aの何%はいくつ？」「何の何%がA？」完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/percentage/">
+<meta property="og:title" content="パーセント計算ツール - 割合を3パターンで計算">
+<meta property="og:description" content="パーセントの計算を3パターンで対応。割合の計算が簡単にできる無料ツール。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/percentage/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "パーセントの計算式は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "割合(%) = (部分の値 ÷ 全体の値) × 100 です。例えば、80人中20人なら 20÷80×100 = 25% となります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "割引率の計算方法は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "割引率(%) = (元の価格 − 割引後の価格) ÷ 元の価格 × 100 です。例えば、1000円の商品が700円になった場合、(1000-700)÷1000×100 = 30%引きです。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "数学", "item": "https://calcverse.net/?cat=math" },
+    { "@type": "ListItem", "position": 3, "name": "パーセント計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=math">数学</a> &gt; パーセント計算</div>
+
+  <h1>% パーセント計算ツール</h1>
+  <p class="calc-desc">パーセント（百分率）の計算を3つのパターンで対応。日常の割合計算にご活用ください。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body" style="grid-template-columns:1fr">
+    <div class="input-section">
+      <h3 style="margin-bottom:16px;color:var(--text-primary)">パターン1: AはBの何%？</h3>
+      <div style="display:flex;gap:12px;align-items:end;margin-bottom:16px;flex-wrap:wrap">
+        <div class="input-group" style="flex:1;min-width:120px;margin-bottom:0">
+          <label for="p1a">A（部分）</label>
+          <input type="number" id="p1a" placeholder="25" inputmode="decimal">
+        </div>
+        <span style="color:var(--text-muted);padding-bottom:12px">は</span>
+        <div class="input-group" style="flex:1;min-width:120px;margin-bottom:0">
+          <label for="p1b">B（全体）</label>
+          <input type="number" id="p1b" placeholder="200" inputmode="decimal">
+        </div>
+        <span style="color:var(--text-muted);padding-bottom:12px">の</span>
+        <button class="calc-btn" style="width:auto;flex:0 0 auto;margin-top:0" onclick="calc1()">何%？</button>
+      </div>
+      <div id="r1" class="result-detail" style="min-height:24px"></div>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin:24px 0">
+
+      <h3 style="margin-bottom:16px;color:var(--text-primary)">パターン2: AのB%はいくつ？</h3>
+      <div style="display:flex;gap:12px;align-items:end;margin-bottom:16px;flex-wrap:wrap">
+        <div class="input-group" style="flex:1;min-width:120px;margin-bottom:0">
+          <label for="p2a">A（元の値）</label>
+          <input type="number" id="p2a" placeholder="200" inputmode="decimal">
+        </div>
+        <span style="color:var(--text-muted);padding-bottom:12px">の</span>
+        <div class="input-group" style="flex:1;min-width:120px;margin-bottom:0">
+          <label for="p2b">B（%）</label>
+          <input type="number" id="p2b" placeholder="15" inputmode="decimal">
+        </div>
+        <span style="color:var(--text-muted);padding-bottom:12px">%は</span>
+        <button class="calc-btn" style="width:auto;flex:0 0 auto;margin-top:0" onclick="calc2()">いくつ？</button>
+      </div>
+      <div id="r2" class="result-detail" style="min-height:24px"></div>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin:24px 0">
+
+      <h3 style="margin-bottom:16px;color:var(--text-primary)">パターン3: 何のB%がA？</h3>
+      <div style="display:flex;gap:12px;align-items:end;margin-bottom:16px;flex-wrap:wrap">
+        <span style="color:var(--text-muted);padding-bottom:12px">何の</span>
+        <div class="input-group" style="flex:1;min-width:120px;margin-bottom:0">
+          <label for="p3b">B（%）</label>
+          <input type="number" id="p3b" placeholder="20" inputmode="decimal">
+        </div>
+        <span style="color:var(--text-muted);padding-bottom:12px">%が</span>
+        <div class="input-group" style="flex:1;min-width:120px;margin-bottom:0">
+          <label for="p3a">A（値）</label>
+          <input type="number" id="p3a" placeholder="50" inputmode="decimal">
+        </div>
+        <span style="color:var(--text-muted);padding-bottom:12px">？</span>
+        <button class="calc-btn" style="width:auto;flex:0 0 auto;margin-top:0" onclick="calc3()">計算</button>
+      </div>
+      <div id="r3" class="result-detail" style="min-height:24px"></div>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>パーセント計算の基礎知識</h2>
+
+    <h3>パーセントの基本公式</h3>
+    <div class="formula">割合(%) = (部分 ÷ 全体) × 100</div>
+    <p>パーセント（percent）は「100分の1」を意味するラテン語に由来します。百分率とも呼ばれ、全体に対する部分の割合を100を基準にして表す方法です。</p>
+
+    <h3>よく使うパーセント計算</h3>
+    <table>
+      <thead><tr><th>場面</th><th>計算式</th><th>例</th></tr></thead>
+      <tbody>
+        <tr><td>割引額</td><td>元値 × 割引率 ÷ 100</td><td>1000円の30%引き → 300円引き → 700円</td></tr>
+        <tr><td>税込み</td><td>税抜き × (1 + 税率÷100)</td><td>1000円 × 1.10 = 1100円</td></tr>
+        <tr><td>増加率</td><td>(新-旧) ÷ 旧 × 100</td><td>(120-100)÷100×100 = 20%増</td></tr>
+        <tr><td>達成率</td><td>実績 ÷ 目標 × 100</td><td>80÷100×100 = 80%達成</td></tr>
+      </tbody>
+    </table>
+
+    <h3>パーセントと分数・小数の変換</h3>
+    <p>パーセントを小数にするには100で割ります（25% = 0.25）。小数をパーセントにするには100を掛けます（0.75 = 75%）。分数からパーセントにするには、分子÷分母×100で求められます（3/4 = 75%）。</p>
+
+    <h3>パーセントポイントとの違い</h3>
+    <p>「パーセント」と「パーセントポイント（%pt）」は異なる概念です。例えば金利が3%から5%に上がった場合、「2パーセントポイント上昇」または「約67%上昇」と表現できます。ニュースなどで混同されやすいので注意が必要です。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/tax/" class="tool-card">
+        <div class="icon" style="background:rgba(245,158,11,0.15)">🧾</div>
+        <h3>消費税計算</h3>
+        <p>税込み⇔税抜き価格を瞬時に算出</p>
+      </a>
+      <a href="/split/" class="tool-card">
+        <div class="icon" style="background:rgba(245,158,11,0.15)">🍻</div>
+        <h3>割り勘計算</h3>
+        <p>飲み会の会計をスマートに精算</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calc1() {
+  const a = parseFloat(document.getElementById('p1a').value);
+  const b = parseFloat(document.getElementById('p1b').value);
+  if (isNaN(a) || isNaN(b) || b === 0) { document.getElementById('r1').innerHTML = '<span style="color:var(--accent-rose)">有効な数値を入力してください</span>'; return; }
+  const pct = (a / b * 100);
+  document.getElementById('r1').innerHTML = `<strong style="color:var(--accent);font-size:18px;font-family:var(--font-mono)">${a} は ${b} の ${pct.toFixed(2)}%</strong>`;
+}
+function calc2() {
+  const a = parseFloat(document.getElementById('p2a').value);
+  const b = parseFloat(document.getElementById('p2b').value);
+  if (isNaN(a) || isNaN(b)) { document.getElementById('r2').innerHTML = '<span style="color:var(--accent-rose)">有効な数値を入力してください</span>'; return; }
+  const val = a * b / 100;
+  document.getElementById('r2').innerHTML = `<strong style="color:var(--accent);font-size:18px;font-family:var(--font-mono)">${a} の ${b}% は ${val.toFixed(2)}</strong>`;
+}
+function calc3() {
+  const a = parseFloat(document.getElementById('p3a').value);
+  const b = parseFloat(document.getElementById('p3b').value);
+  if (isNaN(a) || isNaN(b) || b === 0) { document.getElementById('r3').innerHTML = '<span style="color:var(--accent-rose)">有効な数値を入力してください</span>'; return; }
+  const val = a / (b / 100);
+  document.getElementById('r3').innerHTML = `<strong style="color:var(--accent);font-size:18px;font-family:var(--font-mono)">${val.toFixed(2)} の ${b}% が ${a}</strong>`;
+}
+</script>
+</body>
+</html>

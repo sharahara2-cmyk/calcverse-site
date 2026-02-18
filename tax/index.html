@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消費税計算ツール｜税込み⇔税抜き価格を瞬時に算出【無料】- CalcVerse</title>
+<meta name="description" content="消費税の計算を瞬時に。税込み→税抜き、税抜き→税込みの変換に対応。8%（軽減税率）と10%の切り替え可能。完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/tax/">
+<meta property="og:title" content="消費税計算ツール - 税込み⇔税抜き価格を瞬時に算出">
+<meta property="og:description" content="消費税8%/10%対応。税込み⇔税抜きの変換が簡単にできる無料ツール。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/tax/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "消費税10%の税込み価格の計算方法は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "税抜き価格に1.1を掛けると税込み価格になります。例：税抜き1,000円の場合、1,000 × 1.1 = 1,100円（税込み）です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "軽減税率8%が適用される商品は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "飲食料品（酒類・外食を除く）と定期購読の新聞（週2回以上発行）に軽減税率8%が適用されます。テイクアウトは8%、イートインは10%です。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "お金", "item": "https://calcverse.net/?cat=finance" },
+    { "@type": "ListItem", "position": 3, "name": "消費税計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=finance">お金</a> &gt; 消費税計算</div>
+
+  <h1>🧾 消費税計算ツール</h1>
+  <p class="calc-desc">税込み⇔税抜き価格を瞬時に算出。消費税10%と軽減税率8%に対応しています。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="price">金額（円）</label>
+        <input type="number" id="price" placeholder="1000" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="direction">計算方向</label>
+        <select id="direction">
+          <option value="toIncl">税抜き → 税込み</option>
+          <option value="toExcl">税込み → 税抜き</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="taxRate">消費税率</label>
+        <select id="taxRate">
+          <option value="10">10%（標準税率）</option>
+          <option value="8">8%（軽減税率）</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calculate()">消費税を計算する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">金額を入力して「消費税を計算する」を押してください。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>消費税計算の基礎知識</h2>
+
+    <h3>税込み価格の計算式</h3>
+    <div class="formula">税込み価格 = 税抜き価格 × (1 + 税率)</div>
+    <p>例えば税抜き1,000円、税率10%の場合：1,000 × 1.1 = 1,100円（税込み）となります。</p>
+
+    <h3>税抜き価格の計算式</h3>
+    <div class="formula">税抜き価格 = 税込み価格 ÷ (1 + 税率)</div>
+    <p>例えば税込み1,100円、税率10%の場合：1,100 ÷ 1.1 = 1,000円（税抜き）となります。</p>
+
+    <h3>軽減税率（8%）の対象</h3>
+    <p>2019年10月の消費税率引き上げ（8%→10%）に伴い、一部の品目に軽減税率8%が適用されています。対象は「飲食料品（酒類・外食を除く）」と「定期購読の新聞（週2回以上発行）」です。テイクアウトやデリバリーは8%、イートインは10%が適用されます。</p>
+
+    <h3>消費税の端数処理</h3>
+    <p>消費税の端数処理については法律上の明確な規定はなく、事業者が「切り捨て」「切り上げ」「四捨五入」のいずれかを選択できます。ただし、2023年10月からのインボイス制度では、1つのインボイスにつき税率ごとに1回の端数処理を行うことが求められています。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/split/" class="tool-card">
+        <div class="icon" style="background:rgba(245,158,11,0.15)">🍻</div>
+        <h3>割り勘計算</h3>
+        <p>飲み会の会計をスマートに精算</p>
+      </a>
+      <a href="/percentage/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">%</div>
+        <h3>パーセント計算</h3>
+        <p>割合の計算を3パターンで対応</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const price = parseFloat(document.getElementById('price').value);
+  const direction = document.getElementById('direction').value;
+  const rate = parseFloat(document.getElementById('taxRate').value) / 100;
+  if (!price || price <= 0) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">有効な金額を入力してください。</p>';
+    return;
+  }
+  let exclPrice, inclPrice, taxAmount;
+  if (direction === 'toIncl') {
+    exclPrice = price;
+    taxAmount = Math.round(price * rate);
+    inclPrice = exclPrice + taxAmount;
+  } else {
+    inclPrice = price;
+    exclPrice = Math.round(price / (1 + rate));
+    taxAmount = inclPrice - exclPrice;
+  }
+  const fmt = x => Math.round(x).toLocaleString();
+  const rateLabel = (rate * 100) + '%';
+  document.getElementById('resultBox').innerHTML = `
+    <h3>計算結果</h3>
+    <div class="result-value" style="color:var(--accent)">¥${fmt(direction === 'toIncl' ? inclPrice : exclPrice)}</div>
+    <div class="result-detail" style="font-size:13px;color:var(--text-muted)">${direction === 'toIncl' ? '税込み価格' : '税抜き価格'}</div>
+    <div class="result-detail" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">税抜き価格: <strong>¥${fmt(exclPrice)}</strong></div>
+    <div class="result-detail">消費税額（${rateLabel}）: <strong style="color:var(--accent-amber)">¥${fmt(taxAmount)}</strong></div>
+    <div class="result-detail">税込み価格: <strong>¥${fmt(inclPrice)}</strong></div>
+    <div class="result-bar"><div class="result-bar-fill" style="width:${(exclPrice/inclPrice*100).toFixed(1)}%;background:var(--accent)"></div></div>
+    <div class="result-detail" style="font-size:12px;color:var(--text-muted)">■ 本体 ${(exclPrice/inclPrice*100).toFixed(1)}%　■ 税 ${(taxAmount/inclPrice*100).toFixed(1)}%</div>
+  `;
+}
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
+</body>
+</html>

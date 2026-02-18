@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>速度・距離・時間計算ツール｜2つの値から残りを算出【無料】- CalcVerse</title>
+<meta name="description" content="速度・距離・時間のうち2つを入力するだけで残りの1つを自動計算。km/h、分、kmなどの単位に対応。完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/speed/">
+<meta property="og:title" content="速度・距離・時間計算ツール">
+<meta property="og:description" content="速度・距離・時間のうち2つから残りを自動計算。完全無料。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/speed/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "速度の公式は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "速度 = 距離 ÷ 時間 です。距離 = 速度 × 時間、時間 = 距離 ÷ 速度 の3つの式に変形できます。「はじき」の図で覚えるのが一般的です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "km/hとm/sの変換方法は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "km/hからm/sに変換するには÷3.6、m/sからkm/hに変換するには×3.6です。例えば時速72kmは72÷3.6=秒速20mです。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "数学", "item": "https://calcverse.net/?cat=math" },
+    { "@type": "ListItem", "position": 3, "name": "速度・距離・時間計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=math">数学</a> &gt; 速度・距離・時間計算</div>
+
+  <h1>🚗 速度・距離・時間計算ツール</h1>
+  <p class="calc-desc">速度・距離・時間のうち2つの値を入力するだけで、残りの1つを自動計算します。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="calcType">求めたい値</label>
+        <select id="calcType" onchange="updateLabels()">
+          <option value="speed">速度を求める（距離÷時間）</option>
+          <option value="distance">距離を求める（速度×時間）</option>
+          <option value="time">時間を求める（距離÷速度）</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="val1" id="label1">距離（km）</label>
+        <input type="number" id="val1" placeholder="100" step="any" inputmode="decimal">
+      </div>
+      <div class="input-group">
+        <label for="val2" id="label2">時間（時間）</label>
+        <input type="number" id="val2" placeholder="2" step="any" inputmode="decimal">
+      </div>
+      <button class="calc-btn" onclick="calculate()">計算する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">2つの値を入力して「計算する」を押してください。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>速度計算の基礎知識</h2>
+
+    <h3>速度・距離・時間の公式</h3>
+    <div class="formula">速度 = 距離 ÷ 時間　／　距離 = 速度 × 時間　／　時間 = 距離 ÷ 速度</div>
+    <p>いわゆる「はじき」の公式です。速度(Speed)・距離(Distance)・時間(Time)の3つの要素のうち、2つがわかれば残りの1つを求められます。</p>
+
+    <h3>速度の単位変換</h3>
+    <table>
+      <thead><tr><th>変換</th><th>計算方法</th><th>例</th></tr></thead>
+      <tbody>
+        <tr><td>km/h → m/s</td><td>÷ 3.6</td><td>72 km/h = 20 m/s</td></tr>
+        <tr><td>m/s → km/h</td><td>× 3.6</td><td>10 m/s = 36 km/h</td></tr>
+        <tr><td>km/h → mph</td><td>÷ 1.609</td><td>100 km/h ≈ 62.1 mph</td></tr>
+        <tr><td>knot → km/h</td><td>× 1.852</td><td>10 knot ≈ 18.5 km/h</td></tr>
+      </tbody>
+    </table>
+
+    <h3>身近な速度の目安</h3>
+    <table>
+      <thead><tr><th>対象</th><th>速度</th></tr></thead>
+      <tbody>
+        <tr><td>徒歩</td><td>約4〜5 km/h</td></tr>
+        <tr><td>自転車</td><td>約15〜20 km/h</td></tr>
+        <tr><td>一般道路（車）</td><td>約40〜60 km/h</td></tr>
+        <tr><td>高速道路（車）</td><td>約80〜120 km/h</td></tr>
+        <tr><td>新幹線</td><td>約250〜320 km/h</td></tr>
+        <tr><td>旅客機</td><td>約800〜900 km/h</td></tr>
+      </tbody>
+    </table>
+
+    <h3>平均速度の注意点</h3>
+    <p>平均速度は「総距離÷総時間」で求めます。行きの速度と帰りの速度を単純に平均しても正しい平均速度にはなりません。例えば、行き60km/h・帰り40km/hで同じ距離を移動した場合、平均速度は50km/hではなく48km/hになります。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/unit-length/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">📏</div>
+        <h3>長さ単位変換</h3>
+        <p>cm, m, inch, feetなどを相互変換</p>
+      </a>
+      <a href="/days/" class="tool-card">
+        <div class="icon" style="background:rgba(6,182,212,0.15)">📅</div>
+        <h3>日数計算</h3>
+        <p>2つの日付間の日数を算出</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function updateLabels() {
+  const type = document.getElementById('calcType').value;
+  const l1 = document.getElementById('label1');
+  const l2 = document.getElementById('label2');
+  const v1 = document.getElementById('val1');
+  const v2 = document.getElementById('val2');
+  if (type === 'speed') { l1.textContent = '距離（km）'; l2.textContent = '時間（時間）'; v1.placeholder = '100'; v2.placeholder = '2'; }
+  else if (type === 'distance') { l1.textContent = '速度（km/h）'; l2.textContent = '時間（時間）'; v1.placeholder = '60'; v2.placeholder = '2'; }
+  else { l1.textContent = '距離（km）'; l2.textContent = '速度（km/h）'; v1.placeholder = '100'; v2.placeholder = '60'; }
+}
+
+function calculate() {
+  const type = document.getElementById('calcType').value;
+  const v1 = parseFloat(document.getElementById('val1').value);
+  const v2 = parseFloat(document.getElementById('val2').value);
+  if (isNaN(v1) || isNaN(v2) || v2 === 0) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">有効な数値を入力してください。</p>';
+    return;
+  }
+  let result, label, unit, detail = '';
+  if (type === 'speed') {
+    result = v1 / v2;
+    label = '速度'; unit = 'km/h';
+    detail = `<div class="result-detail" style="margin-top:12px">= ${(result / 3.6).toFixed(2)} m/s</div>`;
+  } else if (type === 'distance') {
+    result = v1 * v2;
+    label = '距離'; unit = 'km';
+    detail = `<div class="result-detail" style="margin-top:12px">= ${(result * 1000).toLocaleString()} m</div>`;
+  } else {
+    result = v1 / v2;
+    label = '時間'; unit = '時間';
+    const h = Math.floor(result);
+    const m = Math.round((result - h) * 60);
+    detail = `<div class="result-detail" style="margin-top:12px">= ${h}時間${m}分</div>`;
+  }
+  document.getElementById('resultBox').innerHTML = `
+    <h3>計算結果</h3>
+    <div class="result-detail" style="margin-top:16px;font-size:13px;color:var(--text-muted)">${label}</div>
+    <div class="result-value" style="color:var(--accent)">${result.toFixed(2)}<span style="font-size:14px;color:var(--text-secondary)"> ${unit}</span></div>
+    ${detail}
+  `;
+}
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
+</body>
+</html>

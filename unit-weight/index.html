@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重さ単位変換ツール｜g・kg・ポンド・オンスを相互変換【無料】- CalcVerse</title>
+<meta name="description" content="重さの単位をリアルタイムで相互変換。ミリグラム・グラム・キログラム・トン・ポンド・オンス・貫・匁に対応。完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/unit-weight/">
+<meta property="og:title" content="重さ単位変換ツール - g, kg, ポンド, オンスなどを相互変換">
+<meta property="og:description" content="重さの単位をリアルタイムで相互変換。メートル法・ヤードポンド法・尺貫法に対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/unit-weight/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1ポンドは何グラムですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1ポンド = 約453.592g（約0.454kg）です。アメリカなどでは体重をポンドで表示することが一般的です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "1オンスは何グラムですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1オンス（常衡オンス）= 約28.3495g です。1ポンド = 16オンスです。食品や郵便物の重さによく使われます。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "単位変換", "item": "https://calcverse.net/?cat=unit" },
+    { "@type": "ListItem", "position": 3, "name": "重さ単位変換" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=unit">単位変換</a> &gt; 重さ単位変換</div>
+
+  <h1>⚖️ 重さ単位変換ツール</h1>
+  <p class="calc-desc">数値を入力するだけで、各種重さの単位をリアルタイムで相互変換します。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="value">数値</label>
+        <input type="number" id="value" placeholder="1" step="any" inputmode="decimal" oninput="convert()">
+      </div>
+      <div class="input-group">
+        <label for="fromUnit">変換元の単位</label>
+        <select id="fromUnit" onchange="convert()">
+          <option value="mg">ミリグラム (mg)</option>
+          <option value="g">グラム (g)</option>
+          <option value="kg" selected>キログラム (kg)</option>
+          <option value="t">トン (t)</option>
+          <option value="oz">オンス (oz)</option>
+          <option value="lb">ポンド (lb)</option>
+          <option value="kan">貫</option>
+          <option value="monme">匁</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="convert()">変換する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>変換結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">数値を入力すると自動変換されます。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>重さの単位変換 基礎知識</h2>
+
+    <h3>メートル法（SI単位系）</h3>
+    <p>国際単位系における質量の基本単位はキログラム(kg)です。2019年にキログラムの定義が「プランク定数」に基づくものに改定されました。</p>
+    <table>
+      <thead><tr><th>単位</th><th>グラム換算</th></tr></thead>
+      <tbody>
+        <tr><td>1 mg</td><td>0.001 g</td></tr>
+        <tr><td>1 g</td><td>1 g</td></tr>
+        <tr><td>1 kg</td><td>1,000 g</td></tr>
+        <tr><td>1 t（トン）</td><td>1,000,000 g</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ヤードポンド法</h3>
+    <p>アメリカ・イギリスなどで使用される重さの単位です。日常的にはポンド(lb)とオンス(oz)がよく使われます。</p>
+    <table>
+      <thead><tr><th>単位</th><th>グラム換算</th></tr></thead>
+      <tbody>
+        <tr><td>1 oz（オンス）</td><td>28.3495 g</td></tr>
+        <tr><td>1 lb（ポンド）</td><td>453.592 g</td></tr>
+      </tbody>
+    </table>
+
+    <h3>尺貫法</h3>
+    <p>日本の伝統的な単位系です。匁（もんめ）は真珠の取引で今でも国際的に使われています（momme）。1貫 = 3.75kg、1匁 = 3.75gです。</p>
+
+    <h3>身近な重さの目安</h3>
+    <table>
+      <thead><tr><th>物品</th><th>重さ</th></tr></thead>
+      <tbody>
+        <tr><td>1円玉</td><td>1 g</td></tr>
+        <tr><td>500mlペットボトル（水）</td><td>約520 g</td></tr>
+        <tr><td>スマートフォン</td><td>約170〜230 g</td></tr>
+        <tr><td>ノートPC</td><td>約1.2〜2.0 kg</td></tr>
+        <tr><td>米1袋</td><td>5 kg または 10 kg</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/unit-length/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">📏</div>
+        <h3>長さ単位変換</h3>
+        <p>cm, m, inch, feetなどを相互変換</p>
+      </a>
+      <a href="/bmi/" class="tool-card">
+        <div class="icon" style="background:rgba(34,197,94,0.15)">⚖️</div>
+        <h3>BMI計算</h3>
+        <p>身長と体重から肥満度を判定</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const toGram = {
+  mg: 0.001, g: 1, kg: 1000, t: 1000000,
+  oz: 28.3495, lb: 453.592,
+  kan: 3750, monme: 3.75
+};
+const unitNames = {
+  mg: 'ミリグラム', g: 'グラム', kg: 'キログラム', t: 'トン',
+  oz: 'オンス', lb: 'ポンド',
+  kan: '貫', monme: '匁'
+};
+
+function convert() {
+  const val = parseFloat(document.getElementById('value').value);
+  const from = document.getElementById('fromUnit').value;
+  if (isNaN(val)) {
+    document.getElementById('resultBox').innerHTML = '<h3>変換結果</h3><p style="color:var(--text-muted);margin-top:24px">数値を入力すると自動変換されます。</p>';
+    return;
+  }
+  const grams = val * toGram[from];
+  let html = '<h3>変換結果</h3>';
+  for (const [unit, factor] of Object.entries(toGram)) {
+    const converted = grams / factor;
+    const isFrom = unit === from;
+    const fmt = converted < 0.01 ? converted.toExponential(4) : converted >= 1000000 ? converted.toExponential(4) : parseFloat(converted.toPrecision(8)).toLocaleString();
+    html += `<div class="result-detail" style="margin-top:8px;${isFrom ? 'color:var(--accent);font-weight:700' : ''}">${unitNames[unit]}: <strong style="font-family:var(--font-mono)">${fmt} ${unit}</strong></div>`;
+  }
+  document.getElementById('resultBox').innerHTML = html;
+}
+</script>
+</body>
+</html>

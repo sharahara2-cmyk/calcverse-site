@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>割り勘計算ツール｜飲み会の会計を傾斜配分で精算【無料】- CalcVerse</title>
+<meta name="description" content="飲み会やグループの会計を簡単に割り勘計算。均等割り・傾斜配分（多め・少なめ）に対応。端数処理も自動で完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/split/">
+<meta property="og:title" content="割り勘計算ツール - 傾斜配分にも対応">
+<meta property="og:description" content="飲み会の会計を簡単に割り勘計算。傾斜配分にも対応。完全無料。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/split/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "割り勘で端数が出た場合はどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一般的には幹事が端数分を多めに負担するか、100円単位で切り上げて余った分を次回の会費に充てる方法があります。このツールでは自動的に端数を調整します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "傾斜配分とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "傾斜配分とは、年齢や役職などに応じて支払い額に差をつける割り勘方法です。例えば上司が多め、新人が少なめに支払うといった配分が可能です。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "日常", "item": "https://calcverse.net/?cat=daily" },
+    { "@type": "ListItem", "position": 3, "name": "割り勘計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=daily">日常</a> &gt; 割り勘計算</div>
+
+  <h1>🍻 割り勘計算ツール</h1>
+  <p class="calc-desc">飲み会やグループの会計をスマートに精算。均等割りはもちろん、「多め・普通・少なめ」の傾斜配分にも対応しています。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="total">合計金額（円）</label>
+        <input type="number" id="total" placeholder="30000" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="more">多めに払う人数</label>
+        <input type="number" id="more" placeholder="0" value="0" min="0" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="normal">普通に払う人数</label>
+        <input type="number" id="normal" placeholder="4" min="0" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="less">少なめに払う人数</label>
+        <input type="number" id="less" placeholder="0" value="0" min="0" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="ratio">傾斜比率（多め : 普通 : 少なめ）</label>
+        <select id="ratio">
+          <option value="1.5,1,0.5">1.5 : 1 : 0.5</option>
+          <option value="2,1,0.5">2 : 1 : 0.5</option>
+          <option value="1.3,1,0.7">1.3 : 1 : 0.7</option>
+          <option value="1,1,1" selected>均等（1 : 1 : 1）</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calculate()">割り勘を計算する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">金額と人数を入力して「割り勘を計算する」を押してください。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>割り勘計算の基礎知識</h2>
+
+    <h3>均等割りの計算</h3>
+    <div class="formula">1人あたり = 合計金額 ÷ 人数</div>
+    <p>最もシンプルな割り勘方法です。全員が同額を支払います。端数が出る場合は100円単位に切り上げ、差額を幹事が調整するのが一般的です。</p>
+
+    <h3>傾斜配分（メリハリ割り勘）</h3>
+    <p>年齢差や役職差があるグループでは、立場に応じて支払い額に差をつける「傾斜配分」がよく使われます。一般的な比率は「多め:普通:少なめ = 1.5:1:0.5」です。上司や先輩が多め、新入社員や学生が少なめに支払います。</p>
+
+    <h3>端数の処理方法</h3>
+    <p>割り勘で端数が出た場合の処理方法はいくつかあります。最も多いのは「幹事が端数を負担する」方法です。他にも「100円単位で切り上げて余剰分をプール」「じゃんけんで端数負担者を決める」など、グループの雰囲気に合った方法を選びましょう。</p>
+
+    <h3>スマートな割り勘のコツ</h3>
+    <p>飲み会の精算をスムーズにするコツは、事前に1人あたりの予算を伝えておくことです。会計時に慌てないよう、幹事はあらかじめおおよその金額を計算しておきましょう。また、電子マネーやQRコード決済を活用すれば、お釣りの問題を避けられます。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/tax/" class="tool-card">
+        <div class="icon" style="background:rgba(245,158,11,0.15)">🧾</div>
+        <h3>消費税計算</h3>
+        <p>税込み⇔税抜き価格を瞬時に算出</p>
+      </a>
+      <a href="/percentage/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">%</div>
+        <h3>パーセント計算</h3>
+        <p>割合の計算を3パターンで対応</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const total = parseFloat(document.getElementById('total').value);
+  const more = parseInt(document.getElementById('more').value) || 0;
+  const normal = parseInt(document.getElementById('normal').value) || 0;
+  const less = parseInt(document.getElementById('less').value) || 0;
+  const people = more + normal + less;
+  if (!total || total <= 0 || people <= 0) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">有効な金額と人数を入力してください。</p>';
+    return;
+  }
+  const ratios = document.getElementById('ratio').value.split(',').map(Number);
+  const totalWeight = more * ratios[0] + normal * ratios[1] + less * ratios[2];
+  const unit = total / totalWeight;
+  const payMore = Math.ceil(unit * ratios[0] / 100) * 100;
+  const payLess = Math.floor(unit * ratios[2] / 100) * 100;
+  const remainder = total - (payMore * more + payLess * less);
+  const payNormal = normal > 0 ? Math.round(remainder / normal / 100) * 100 : 0;
+  const actualTotal = payMore * more + payNormal * normal + payLess * less;
+  const diff = total - actualTotal;
+  const fmt = x => Math.round(x).toLocaleString();
+  let html = '<h3>計算結果</h3>';
+  if (more > 0) html += `<div class="result-detail" style="margin-top:16px">多め（${more}人）: <strong style="color:var(--accent)">¥${fmt(payMore)}</strong> / 人</div>`;
+  html += `<div class="result-detail" style="margin-top:${more > 0 ? '8' : '16'}px">普通（${normal}人）: <strong style="color:var(--accent)">¥${fmt(payNormal)}</strong> / 人</div>`;
+  if (less > 0) html += `<div class="result-detail">少なめ（${less}人）: <strong style="color:var(--accent)">¥${fmt(payLess)}</strong> / 人</div>`;
+  html += `<div class="result-detail" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">合計: <strong>¥${fmt(actualTotal)}</strong></div>`;
+  if (diff !== 0) html += `<div class="result-detail" style="font-size:12px;color:var(--text-muted)">端数調整: ${diff > 0 ? '+' : ''}¥${fmt(diff)}（幹事が調整）</div>`;
+  html += `<div class="result-value" style="margin-top:16px;font-size:24px;color:var(--accent-green)">合計 ${people}人</div>`;
+  document.getElementById('resultBox').innerHTML = html;
+}
+document.querySelectorAll('input').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
+</body>
+</html>

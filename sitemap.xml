@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://calcverse.net/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://calcverse.net/bmi/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calcverse.net/calories/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcverse.net/loan/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calcverse.net/compound/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcverse.net/split/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcverse.net/age/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcverse.net/days/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://calcverse.net/tax/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcverse.net/percentage/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://calcverse.net/unit-length/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://calcverse.net/unit-weight/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://calcverse.net/speed/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

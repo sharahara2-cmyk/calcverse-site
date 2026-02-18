@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CalcVerse - 無料オンライン計算ツール集｜BMI・ローン・割り勘</title>
+<meta name="description" content="完全無料のオンライン計算ツール集。BMI計算、住宅ローン返済シミュレーション、割り勘計算、単位変換、年齢計算など12以上のツールをブラウザだけで利用可能。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/">
+<meta property="og:title" content="CalcVerse - 無料オンライン計算ツール集">
+<meta property="og:description" content="BMI・ローン・割り勘・単位変換など、日常に必要な計算ツールを無料で提供。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Google AdSense (承認後にca-pub-IDを置換) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<!-- 構造化データ: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "CalcVerse",
+  "url": "https://calcverse.net/",
+  "description": "完全無料のオンライン計算ツール集",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://calcverse.net/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 構造化データ: ItemList (ツール一覧) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "計算ツール一覧",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "url": "https://calcverse.net/bmi/", "name": "BMI計算"},
+    {"@type": "ListItem", "position": 2, "url": "https://calcverse.net/calories/", "name": "基礎代謝量計算"},
+    {"@type": "ListItem", "position": 3, "url": "https://calcverse.net/loan/", "name": "住宅ローン計算"},
+    {"@type": "ListItem", "position": 4, "url": "https://calcverse.net/compound/", "name": "複利計算"},
+    {"@type": "ListItem", "position": 5, "url": "https://calcverse.net/split/", "name": "割り勘計算"},
+    {"@type": "ListItem", "position": 6, "url": "https://calcverse.net/age/", "name": "年齢計算"},
+    {"@type": "ListItem", "position": 7, "url": "https://calcverse.net/days/", "name": "日数計算"},
+    {"@type": "ListItem", "position": 8, "url": "https://calcverse.net/tax/", "name": "消費税計算"},
+    {"@type": "ListItem", "position": 9, "url": "https://calcverse.net/percentage/", "name": "パーセント計算"},
+    {"@type": "ListItem", "position": 10, "url": "https://calcverse.net/unit-length/", "name": "長さ単位変換"},
+    {"@type": "ListItem", "position": 11, "url": "https://calcverse.net/unit-weight/", "name": "重さ単位変換"},
+    {"@type": "ListItem", "position": 12, "url": "https://calcverse.net/speed/", "name": "速度・距離・時間計算"}
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <a href="/" class="logo">
+    <div class="logo-icon">∑</div>
+    <span>CalcVerse</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="計算ツールを検索..." oninput="filterTools()" aria-label="ツール検索">
+  </div>
+</header>
+
+<!-- Hero -->
+<main>
+<section class="hero">
+  <h1>すべての計算を、一瞬で。</h1>
+  <p>日常生活・ビジネス・健康管理に必要な計算ツールを完全無料で提供</p>
+</section>
+
+<!-- Ad: Top Banner -->
+<div class="container">
+  <div class="ad-slot" id="ad-top">
+    <!-- AdSense承認後: <ins class="adsbygoogle" data-ad-client="ca-pub-XXX" data-ad-slot="XXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+    <span>広告</span>
+  </div>
+</div>
+
+<!-- Category Nav -->
+<div class="container">
+  <nav class="cat-nav" aria-label="カテゴリ">
+    <button class="cat-btn active" onclick="filterCategory('all', this)">すべて</button>
+    <button class="cat-btn" onclick="filterCategory('health', this)">🏥 健康</button>
+    <button class="cat-btn" onclick="filterCategory('finance', this)">💰 お金</button>
+    <button class="cat-btn" onclick="filterCategory('daily', this)">🏠 日常</button>
+    <button class="cat-btn" onclick="filterCategory('unit', this)">📐 単位変換</button>
+    <button class="cat-btn" onclick="filterCategory('date', this)">📅 日付</button>
+    <button class="cat-btn" onclick="filterCategory('math', this)">🧮 数学</button>
+  </nav>
+
+  <!-- Tools Grid -->
+  <div class="tools-grid" id="toolsGrid"></div>
+</div>
+
+<!-- Ad: Middle -->
+<div class="container">
+  <div class="ad-slot" id="ad-mid">
+    <span>広告</span>
+  </div>
+</div>
+
+<!-- SEO Content -->
+<section class="container seo-section">
+  <h2>CalcVerseとは</h2>
+  <p>CalcVerseは、日常生活からビジネス、健康管理まで幅広いシーンで使える完全無料のオンライン計算ツール集です。BMI計算、住宅ローンの返済シミュレーション、割り勘計算、複利計算（積立投資シミュレーション）、単位変換、年齢計算など、12以上の便利なツールをブラウザだけで利用できます。</p>
+  <p>すべてのツールはアプリのインストール不要で、スマートフォン・タブレット・パソコンからいつでもアクセス可能です。計算はすべてブラウザ上でリアルタイムに処理されるため、入力データがサーバーに送信されることはありません。</p>
+
+  <h2>人気の計算ツール</h2>
+  <p>特に利用者が多いのは、BMI計算ツール（身長と体重から肥満度を判定）、住宅ローン計算ツール（毎月の返済額・総支払額をシミュレーション）、割り勘計算ツール（傾斜配分にも対応）です。また、年齢計算では干支や星座も表示し、日数計算では営業日（土日除く）の算出にも対応しています。</p>
+
+  <h2>よくある質問</h2>
+  <h3>利用料はかかりますか？</h3>
+  <p>いいえ、すべてのツールは完全無料でご利用いただけます。会員登録も不要です。</p>
+  <h3>入力したデータは保存されますか？</h3>
+  <p>いいえ、すべての計算はブラウザ上で行われ、データはサーバーに送信されません。</p>
+  <h3>スマートフォンでも使えますか？</h3>
+  <p>はい、レスポンシブデザインに対応しており、すべてのデバイスで快適にご利用いただけます。</p>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const tools = [
+  { id:'bmi', name:'BMI計算', desc:'身長と体重からBMI（体格指数）を算出し肥満度を判定', icon:'⚖️', iconBg:'rgba(34,197,94,0.15)', category:'health', tag:'人気', url:'/bmi/' },
+  { id:'calories', name:'基礎代謝量計算', desc:'年齢・性別・体格から1日の基礎代謝量(BMR)を算出', icon:'🔥', iconBg:'rgba(245,158,11,0.15)', category:'health', tag:'健康', url:'/calories/' },
+  { id:'loan', name:'住宅ローン計算', desc:'借入額・金利・期間から毎月返済額と総支払額をシミュレーション', icon:'🏠', iconBg:'rgba(99,102,241,0.15)', category:'finance', tag:'人気', url:'/loan/' },
+  { id:'compound', name:'複利計算（積立投資）', desc:'毎月の積立額と利回りから将来の資産額を計算', icon:'📈', iconBg:'rgba(34,197,94,0.15)', category:'finance', tag:'投資', url:'/compound/' },
+  { id:'split', name:'割り勘計算', desc:'飲み会の会計をスマートに精算。傾斜配分にも対応', icon:'🍻', iconBg:'rgba(245,158,11,0.15)', category:'daily', tag:'人気', url:'/split/' },
+  { id:'age', name:'年齢計算', desc:'生年月日から現在の満年齢・干支・星座・次の誕生日を計算', icon:'🎂', iconBg:'rgba(244,63,94,0.15)', category:'date', tag:'日常', url:'/age/' },
+  { id:'days', name:'日数計算', desc:'2つの日付間の日数・営業日数・週数を算出', icon:'📅', iconBg:'rgba(6,182,212,0.15)', category:'date', tag:'便利', url:'/days/' },
+  { id:'tax', name:'消費税計算', desc:'税込み⇔税抜き価格を瞬時に算出。8%/10%対応', icon:'🧾', iconBg:'rgba(245,158,11,0.15)', category:'finance', tag:'日常', url:'/tax/' },
+  { id:'percentage', name:'パーセント計算', desc:'割合の計算を3パターンで対応。何%か・何の何%か', icon:'%', iconBg:'rgba(99,102,241,0.15)', category:'math', tag:'基本', url:'/percentage/' },
+  { id:'unit_length', name:'長さ単位変換', desc:'cm, m, inch, feet, マイルなど各種長さの単位を相互変換', icon:'📏', iconBg:'rgba(99,102,241,0.15)', category:'unit', tag:'単位', url:'/unit-length/' },
+  { id:'unit_weight', name:'重さ単位変換', desc:'g, kg, ポンド, オンスなど重さの単位を相互変換', icon:'⚖️', iconBg:'rgba(34,197,94,0.15)', category:'unit', tag:'単位', url:'/unit-weight/' },
+  { id:'speed', name:'速度・距離・時間計算', desc:'速度・距離・時間のうち2つから残りの1つを算出', icon:'🚗', iconBg:'rgba(6,182,212,0.15)', category:'math', tag:'便利', url:'/speed/' },
+];
+
+function renderTools(filtered) {
+  const grid = document.getElementById('toolsGrid');
+  grid.innerHTML = '';
+  (filtered || tools).forEach(t => {
+    const card = document.createElement('a');
+    card.href = t.url;
+    card.className = 'tool-card';
+    card.dataset.category = t.category;
+    card.dataset.search = (t.name + t.desc).toLowerCase();
+    card.innerHTML = `
+      <div class="icon" style="background:${t.iconBg}">${t.icon}</div>
+      <h3>${t.name}</h3>
+      <p>${t.desc}</p>
+      <span class="tag">${t.tag}</span>`;
+    grid.appendChild(card);
+  });
+}
+
+function filterCategory(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTools(cat === 'all' ? tools : tools.filter(t => t.category === cat));
+}
+
+function filterTools() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  renderTools(q ? tools.filter(t => t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)) : tools);
+}
+
+renderTools();
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>長さ単位変換ツール｜cm・m・inch・feet・マイルを相互変換【無料】- CalcVerse</title>
+<meta name="description" content="長さの単位をリアルタイムで相互変換。ミリメートル・センチメートル・メートル・キロメートル・インチ・フィート・ヤード・マイル・尺・寸に対応。完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/unit-length/">
+<meta property="og:title" content="長さ単位変換ツール - cm, m, inch, feetなどを相互変換">
+<meta property="og:description" content="長さの単位をリアルタイムで相互変換。メートル法・ヤードポンド法・尺貫法に対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/unit-length/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1インチは何センチですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1インチ = 2.54cm です。テレビやモニターの画面サイズはインチで表示されることが多く、1インチ=約2.5cmと覚えておくと便利です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "1マイルは何キロメートルですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1マイル = 約1.609km です。アメリカなど一部の国では距離をマイルで表示します。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "単位変換", "item": "https://calcverse.net/?cat=unit" },
+    { "@type": "ListItem", "position": 3, "name": "長さ単位変換" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=unit">単位変換</a> &gt; 長さ単位変換</div>
+
+  <h1>📏 長さ単位変換ツール</h1>
+  <p class="calc-desc">数値を入力するだけで、各種長さの単位をリアルタイムで相互変換します。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="value">数値</label>
+        <input type="number" id="value" placeholder="100" step="any" inputmode="decimal" oninput="convert()">
+      </div>
+      <div class="input-group">
+        <label for="fromUnit">変換元の単位</label>
+        <select id="fromUnit" onchange="convert()">
+          <option value="mm">ミリメートル (mm)</option>
+          <option value="cm" selected>センチメートル (cm)</option>
+          <option value="m">メートル (m)</option>
+          <option value="km">キロメートル (km)</option>
+          <option value="in">インチ (inch)</option>
+          <option value="ft">フィート (feet)</option>
+          <option value="yd">ヤード (yard)</option>
+          <option value="mi">マイル (mile)</option>
+          <option value="shaku">尺</option>
+          <option value="sun">寸</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="convert()">変換する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>変換結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">数値を入力すると自動変換されます。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>長さの単位変換 基礎知識</h2>
+
+    <h3>メートル法（SI単位系）</h3>
+    <p>国際単位系（SI）における長さの基本単位はメートル(m)です。1983年の国際度量衡総会で、メートルは「光が真空中で1/299,792,458秒間に進む距離」と定義されました。</p>
+    <table>
+      <thead><tr><th>単位</th><th>メートル換算</th></tr></thead>
+      <tbody>
+        <tr><td>1 mm</td><td>0.001 m</td></tr>
+        <tr><td>1 cm</td><td>0.01 m</td></tr>
+        <tr><td>1 m</td><td>1 m</td></tr>
+        <tr><td>1 km</td><td>1,000 m</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ヤードポンド法</h3>
+    <p>アメリカ・イギリスなどで使用される単位系です。インチ、フィート、ヤード、マイルが一般的に使われます。</p>
+    <table>
+      <thead><tr><th>単位</th><th>メートル換算</th></tr></thead>
+      <tbody>
+        <tr><td>1 inch</td><td>2.54 cm</td></tr>
+        <tr><td>1 foot</td><td>30.48 cm</td></tr>
+        <tr><td>1 yard</td><td>91.44 cm</td></tr>
+        <tr><td>1 mile</td><td>1,609.344 m</td></tr>
+      </tbody>
+    </table>
+
+    <h3>尺貫法</h3>
+    <p>日本の伝統的な単位系です。建築や着物の世界で今でも使われています。1尺 = 約30.303cm、1寸 = 約3.030cmです。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/unit-weight/" class="tool-card">
+        <div class="icon" style="background:rgba(34,197,94,0.15)">⚖️</div>
+        <h3>重さ単位変換</h3>
+        <p>g, kg, ポンド, オンスなどを相互変換</p>
+      </a>
+      <a href="/speed/" class="tool-card">
+        <div class="icon" style="background:rgba(6,182,212,0.15)">🚗</div>
+        <h3>速度・距離・時間計算</h3>
+        <p>速度・距離・時間の計算</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const toMeter = {
+  mm: 0.001, cm: 0.01, m: 1, km: 1000,
+  in: 0.0254, ft: 0.3048, yd: 0.9144, mi: 1609.344,
+  shaku: 0.30303, sun: 0.030303
+};
+const unitNames = {
+  mm: 'ミリメートル', cm: 'センチメートル', m: 'メートル', km: 'キロメートル',
+  in: 'インチ', ft: 'フィート', yd: 'ヤード', mi: 'マイル',
+  shaku: '尺', sun: '寸'
+};
+
+function convert() {
+  const val = parseFloat(document.getElementById('value').value);
+  const from = document.getElementById('fromUnit').value;
+  if (isNaN(val)) {
+    document.getElementById('resultBox').innerHTML = '<h3>変換結果</h3><p style="color:var(--text-muted);margin-top:24px">数値を入力すると自動変換されます。</p>';
+    return;
+  }
+  const meters = val * toMeter[from];
+  let html = '<h3>変換結果</h3>';
+  for (const [unit, factor] of Object.entries(toMeter)) {
+    const converted = meters / factor;
+    const isFrom = unit === from;
+    const fmt = converted < 0.01 ? converted.toExponential(4) : converted >= 1000000 ? converted.toExponential(4) : parseFloat(converted.toPrecision(8)).toLocaleString();
+    html += `<div class="result-detail" style="margin-top:8px;${isFrom ? 'color:var(--accent);font-weight:700' : ''}">${unitNames[unit]}: <strong style="font-family:var(--font-mono)">${fmt} ${unit}</strong></div>`;
+  }
+  document.getElementById('resultBox').innerHTML = html;
+}
+</script>
+</body>
+</html>

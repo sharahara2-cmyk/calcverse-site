@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>複利計算ツール（積立投資シミュレーション）｜将来の資産額を計算【無料】- CalcVerse</title>
+<meta name="description" content="毎月の積立額と想定利回りから将来の資産額を複利計算でシミュレーション。つみたてNISA・iDeCoの運用にも。完全無料。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/compound/">
+<meta property="og:title" content="複利計算ツール - 積立投資シミュレーション">
+<meta property="og:description" content="毎月の積立額と利回りから将来の資産額を計算。つみたてNISA・iDeCoにも対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/compound/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "複利とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "複利とは、元本だけでなく利息にも利息がつく計算方法です。例えば100万円を年利5%で運用すると、1年目は5万円の利息ですが、2年目は105万円に対して5.25万円の利息がつきます。長期間では単利との差が大きくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "72の法則とは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "72の法則は、資産が2倍になるまでの年数を簡易的に求める方法です。72÷年利(%)で計算できます。例えば年利6%なら72÷6=12年で資産が約2倍になります。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "お金", "item": "https://calcverse.net/?cat=finance" },
+    { "@type": "ListItem", "position": 3, "name": "複利計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo"><div class="logo-icon">∑</div><span>CalcVerse</span></a>
+  <div class="search-wrap"><input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索"></div>
+</header>
+
+<main class="container calc-page">
+  <div class="breadcrumb"><a href="/">CalcVerse</a> &gt; <a href="/?cat=finance">お金</a> &gt; 複利計算</div>
+
+  <h1>📈 複利計算ツール（積立投資シミュレーション）</h1>
+  <p class="calc-desc">毎月の積立額と想定利回りから、将来の資産額を複利計算でシミュレーション。つみたてNISA・iDeCoの運用計画にもご活用ください。</p>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="initial">初期投資額（万円）</label>
+        <input type="number" id="initial" placeholder="0" value="0" inputmode="numeric">
+      </div>
+      <div class="input-group">
+        <label for="monthly">毎月積立額（万円）</label>
+        <input type="number" id="monthly" placeholder="3" step="0.1" inputmode="decimal">
+      </div>
+      <div class="input-group">
+        <label for="rate">想定年利（%）</label>
+        <input type="number" id="rate" placeholder="5" step="0.1" inputmode="decimal">
+      </div>
+      <div class="input-group">
+        <label for="years">運用期間（年）</label>
+        <input type="number" id="years" placeholder="20" inputmode="numeric">
+      </div>
+      <button class="calc-btn" onclick="calculate()">シミュレーションする</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">各項目を入力して「シミュレーションする」を押してください。</p>
+    </div>
+  </div>
+
+  <div class="ad-slot"><span>広告</span></div>
+
+  <div class="article-section">
+    <h2>複利計算の基礎知識</h2>
+
+    <h3>複利の計算式</h3>
+    <div class="formula">将来価値 = 初期額 × (1+r)^n + 毎月積立額 × ((1+r)^n − 1) / r</div>
+    <p>r = 月利（年利÷12）、n = 月数（年数×12）です。複利効果により、長期運用するほど元本と利益の差が大きくなります。</p>
+
+    <h3>72の法則</h3>
+    <p>「72の法則」は、資産が2倍になるまでのおおよその年数を簡単に求める方法です。72÷年利(%)で計算できます。例えば年利5%なら72÷5=約14.4年で資産がおよそ2倍になります。</p>
+
+    <h3>つみたてNISAとiDeCo</h3>
+    <p>つみたてNISA（2024年からは新NISA）は年間投資枠360万円（つみたて投資枠120万円+成長投資枠240万円）、非課税保有限度額1,800万円です。iDeCo（個人型確定拠出年金）は掛金が全額所得控除、運用益は非課税、受取時にも控除があります。どちらも長期の複利効果を活用する制度です。</p>
+
+    <h3>リスクとリターンの目安</h3>
+    <table>
+      <thead><tr><th>資産クラス</th><th>期待リターン（年率）</th><th>リスク</th></tr></thead>
+      <tbody>
+        <tr><td>国内債券</td><td>1〜2%</td><td>低</td></tr>
+        <tr><td>先進国債券</td><td>2〜3%</td><td>低〜中</td></tr>
+        <tr><td>国内株式</td><td>4〜6%</td><td>中</td></tr>
+        <tr><td>先進国株式</td><td>5〜7%</td><td>中〜高</td></tr>
+        <tr><td>新興国株式</td><td>6〜9%</td><td>高</td></tr>
+      </tbody>
+    </table>
+    <p>上記は過去の実績に基づく目安であり、将来のリターンを保証するものではありません。</p>
+  </div>
+
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/loan/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">🏠</div>
+        <h3>住宅ローン計算</h3>
+        <p>毎月返済額と総支払額をシミュレーション</p>
+      </a>
+      <a href="/percentage/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">%</div>
+        <h3>パーセント計算</h3>
+        <p>割合の計算を3パターンで対応</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const initial = (parseFloat(document.getElementById('initial').value) || 0) * 10000;
+  const monthly = parseFloat(document.getElementById('monthly').value) * 10000;
+  const annualRate = parseFloat(document.getElementById('rate').value);
+  const years = parseInt(document.getElementById('years').value);
+  if (!monthly || !years || monthly < 0 || years <= 0 || isNaN(annualRate)) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">有効な数値を入力してください。</p>';
+    return;
+  }
+  const r = annualRate / 100 / 12;
+  const n = years * 12;
+  const totalDeposit = initial + monthly * n;
+  let futureValue;
+  if (r === 0) {
+    futureValue = initial + monthly * n;
+  } else {
+    futureValue = initial * Math.pow(1 + r, n) + monthly * (Math.pow(1 + r, n) - 1) / r;
+  }
+  const profit = futureValue - totalDeposit;
+  const fmt = x => Math.round(x).toLocaleString();
+  const manFmt = x => (x / 10000).toFixed(1);
+  const profitRatio = totalDeposit > 0 ? (profit / totalDeposit * 100).toFixed(1) : '0';
+  document.getElementById('resultBox').innerHTML = `
+    <h3>計算結果</h3>
+    <div class="result-value" style="color:var(--accent-green)">¥${fmt(futureValue)}</div>
+    <div class="result-detail" style="font-size:13px;color:var(--text-muted)">${years}年後の資産額（${manFmt(futureValue)}万円）</div>
+    <div class="result-detail" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">元本合計: <strong>¥${fmt(totalDeposit)}</strong>（${manFmt(totalDeposit)}万円）</div>
+    <div class="result-detail">運用益: <strong style="color:var(--accent-green)">+¥${fmt(profit)}</strong>（${manFmt(profit)}万円）</div>
+    <div class="result-detail">利益率: <strong>${profitRatio}%</strong></div>
+    <div class="result-bar"><div class="result-bar-fill" style="width:${(totalDeposit/futureValue*100).toFixed(1)}%;background:var(--accent)"></div></div>
+    <div class="result-detail" style="font-size:12px;color:var(--text-muted)">■ 元本 ${(totalDeposit/futureValue*100).toFixed(1)}%　■ 運用益 ${(profit/futureValue*100).toFixed(1)}%</div>
+  `;
+}
+document.querySelectorAll('input').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
+</body>
+</html>

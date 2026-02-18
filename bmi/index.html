@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI計算ツール｜身長と体重から肥満度を判定【無料】- CalcVerse</title>
+<meta name="description" content="身長と体重を入力するだけでBMI（体格指数）を自動計算。日本肥満学会の基準で肥満度を判定。標準体重との差も表示。完全無料・登録不要。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcverse.net/bmi/">
+<meta property="og:title" content="BMI計算ツール - 身長と体重から肥満度を判定">
+<meta property="og:description" content="BMIを自動計算。日本肥満学会の基準で肥満度を判定。標準体重との差も表示。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcverse.net/bmi/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 構造化データ: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "BMIとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI（Body Mass Index）は体格指数とも呼ばれ、体重(kg)を身長(m)の2乗で割って算出する肥満度の指標です。日本肥満学会ではBMI 22を標準としています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "BMIの計算式は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI = 体重(kg) ÷ 身長(m) ÷ 身長(m)。例：身長170cm、体重65kgの場合、65 ÷ 1.7 ÷ 1.7 = 22.5となります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "標準体重はどう計算しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "標準体重 = 身長(m) × 身長(m) × 22。BMI 22が統計的に最も病気になりにくいとされています。"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 構造化データ: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "CalcVerse", "item": "https://calcverse.net/" },
+    { "@type": "ListItem", "position": 2, "name": "健康", "item": "https://calcverse.net/?cat=health" },
+    { "@type": "ListItem", "position": 3, "name": "BMI計算" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <div class="logo-icon">∑</div>
+    <span>CalcVerse</span>
+  </a>
+  <div class="search-wrap">
+    <input type="text" placeholder="計算ツールを検索..." aria-label="ツール検索">
+  </div>
+</header>
+
+<main class="container calc-page">
+  <!-- パンくず -->
+  <div class="breadcrumb">
+    <a href="/">CalcVerse</a> &gt; <a href="/?cat=health">健康</a> &gt; BMI計算
+  </div>
+
+  <h1>⚖️ BMI計算ツール</h1>
+  <p class="calc-desc">身長と体重を入力するだけでBMI（Body Mass Index / 体格指数）を自動計算。日本肥満学会の基準で肥満度を判定し、標準体重との差も表示します。</p>
+
+  <!-- Ad: Top -->
+  <div class="ad-slot"><span>広告</span></div>
+
+  <!-- Calculator -->
+  <div class="calc-body">
+    <div class="input-section">
+      <div class="input-group">
+        <label for="height">身長 (cm)</label>
+        <input type="number" id="height" placeholder="170" step="0.1" inputmode="decimal">
+      </div>
+      <div class="input-group">
+        <label for="weight">体重 (kg)</label>
+        <input type="number" id="weight" placeholder="65" step="0.1" inputmode="decimal">
+      </div>
+      <button class="calc-btn" onclick="calculate()">BMIを計算する</button>
+    </div>
+    <div class="result-section" id="resultBox">
+      <h3>計算結果</h3>
+      <p style="color:var(--text-muted);margin-top:24px">身長と体重を入力して「BMIを計算する」を押してください。</p>
+    </div>
+  </div>
+
+  <!-- Ad: Middle -->
+  <div class="ad-slot"><span>広告</span></div>
+
+  <!-- SEO Article -->
+  <div class="article-section">
+    <h2>BMI（体格指数）とは</h2>
+    <p>BMI（Body Mass Index）は、身長と体重から算出する肥満度の国際的な指標です。1835年にベルギーの数学者アドルフ・ケトレーによって考案されました。WHO（世界保健機関）および日本肥満学会がBMIを肥満判定の基準として採用しています。</p>
+
+    <h3>BMIの計算式</h3>
+    <div class="formula">BMI = 体重 (kg) ÷ 身長 (m)²</div>
+    <p>例えば、身長170cm・体重65kgの場合：BMI = 65 ÷ (1.70 × 1.70) = 22.49 となります。</p>
+
+    <h3>日本肥満学会のBMI判定基準</h3>
+    <table>
+      <thead>
+        <tr><th>BMI</th><th>判定</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>18.5未満</td><td>低体重（やせ）</td></tr>
+        <tr><td>18.5〜25未満</td><td>普通体重</td></tr>
+        <tr><td>25〜30未満</td><td>肥満（1度）</td></tr>
+        <tr><td>30〜35未満</td><td>肥満（2度）</td></tr>
+        <tr><td>35〜40未満</td><td>肥満（3度）</td></tr>
+        <tr><td>40以上</td><td>肥満（4度）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>標準体重について</h3>
+    <div class="formula">標準体重 (kg) = 身長 (m)² × 22</div>
+    <p>BMI 22は統計的に最も疾病リスクが低いとされており、この値から算出される体重を「標準体重」と呼びます。ただし、BMIは体脂肪率を直接測定するものではないため、筋肉量が多いアスリートなどでは高めに出る場合があります。体組成の評価には体脂肪率の測定を併用することが推奨されます。</p>
+
+    <h3>BMIの限界</h3>
+    <p>BMIは簡便な指標である一方、筋肉量と脂肪量を区別できないという限界があります。同じBMIでも体脂肪率や内臓脂肪量は個人差が大きく、健康リスクの評価にはウエスト周囲径や血液検査などを含めた総合的な判断が必要です。</p>
+  </div>
+
+  <!-- Related Tools -->
+  <div class="related-tools">
+    <h2>関連する計算ツール</h2>
+    <div class="related-grid">
+      <a href="/calories/" class="tool-card">
+        <div class="icon" style="background:rgba(245,158,11,0.15)">🔥</div>
+        <h3>基礎代謝量計算</h3>
+        <p>年齢・性別・体格から1日のBMRを算出</p>
+      </a>
+      <a href="/percentage/" class="tool-card">
+        <div class="icon" style="background:rgba(99,102,241,0.15)">%</div>
+        <h3>パーセント計算</h3>
+        <p>割合の計算を3パターンで対応</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 CalcVerse. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="/privacy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const h = parseFloat(document.getElementById('height').value);
+  const w = parseFloat(document.getElementById('weight').value);
+  if (!h || !w || h <= 0 || w <= 0) {
+    document.getElementById('resultBox').innerHTML = '<h3>計算結果</h3><p style="color:var(--accent-rose);margin-top:24px">有効な数値を入力してください。</p>';
+    return;
+  }
+  const hm = h / 100;
+  const bmi = w / (hm * hm);
+  let status, color;
+  if (bmi < 18.5) { status = '低体重（やせ）'; color = 'var(--accent-cyan)'; }
+  else if (bmi < 25) { status = '普通体重'; color = 'var(--accent-green)'; }
+  else if (bmi < 30) { status = '肥満（1度）'; color = 'var(--accent-amber)'; }
+  else if (bmi < 35) { status = '肥満（2度）'; color = 'var(--accent-rose)'; }
+  else { status = '肥満（3度以上）'; color = 'var(--accent-rose)'; }
+  const ideal = 22 * hm * hm;
+  const diff = w - ideal;
+  const pct = Math.min(bmi / 40 * 100, 100);
+  document.getElementById('resultBox').innerHTML = `
+    <h3>計算結果</h3>
+    <div class="result-value" style="color:${color}">${bmi.toFixed(1)}</div>
+    <div class="result-detail">判定: <strong style="color:${color}">${status}</strong></div>
+    <div class="result-bar"><div class="result-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+    <div class="result-detail" style="margin-top:16px">標準体重 (BMI 22): <strong>${ideal.toFixed(1)} kg</strong></div>
+    <div class="result-detail">標準体重との差: <strong>${diff > 0 ? '+' : ''}${diff.toFixed(1)} kg</strong></div>
+  `;
+}
+
+// Enter key support
+document.querySelectorAll('input').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
+</body>
+</html>
